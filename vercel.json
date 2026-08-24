@@ -1,15 +1,21 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/(.*)\\.bin",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
+      "source": "/assets/(.*\\.bin)",
+      "headers": [{"key": "Content-Type", "value": "application/javascript; charset=utf-8"}]
     }
+  ],
+  "rewrites": [
+    {"source": "/projects", "destination": "/projects.html"},
+    {"source": "/projects/:slug", "destination": "/projects/:slug.html"},
+    {"source": "/talents", "destination": "/talents.html"},
+    {"source": "/talents/:slug", "destination": "/talents/:slug.html"},
+    {"source": "/insights", "destination": "/insights.html"},
+    {"source": "/insights/:slug", "destination": "/insights/:slug.html"},
+    {"source": "/reports/:slug", "destination": "/reports/:slug.html"},
+    {"source": "/services", "destination": "/services.html"},
+    {"source": "/contact", "destination": "/contact.html"}
   ]
 }
